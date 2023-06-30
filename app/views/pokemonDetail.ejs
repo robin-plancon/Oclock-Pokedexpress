@@ -1,0 +1,58 @@
+<%- include('partials/header') %>
+<h1 class="page-title">Détails de <%= pokemon.nom %></h1>
+<div class="container-detail">
+  <img class="pokemon-image" src="/img/<%= pokemon.numero %>.png" alt="image de <%= pokemon.nom %>" />
+  <div class="pokemon-details">
+    <h2 class="pokemon-name">#<%= pokemon.numero %> <%= pokemon.nom %></h2>
+    <div class="pokemon-types"></div>
+    <h3 class="stat-title">Statistiques</h3>
+    <ul class="stat-list">
+      <li class="stat-detail">
+        <span class="stat-detail-name">PV</span>
+        <span class="stat-detail-value"><%= pokemon.pv %></span>
+        <div class="stat-bar">
+          <div class="stat-bar-value" style="width: <%= pokemon.pv * 100 / 255 %>%;"></span>
+        </div>
+      </li>
+      <li class="stat-detail">
+        <span class="stat-detail-name">Attaque</span>
+        <span class="stat-detail-value"><%= pokemon.attaque %></span>
+        <div class="stat-bar">
+          <div class="stat-bar-value" style="width: <%= pokemon.attaque * 100 / 255 %>%;"></span>
+        </div>
+      </li>
+      <li class="stat-detail">
+        <span class="stat-detail-name">Défense</span>
+        <span class="stat-detail-value"><%= pokemon.defense %></span>
+        <div class="stat-bar">
+          <div class="stat-bar-value" style="width: <%= pokemon.defense * 100 / 255 %>%;"></span>
+        </div>
+      </li>
+      <li class="stat-detail">
+        <span class="stat-detail-name">Attaque Spé.</span>
+        <span class="stat-detail-value"><%= pokemon.attaque_spe %></span>
+        <div class="stat-bar">
+          <div class="stat-bar-value" style="width: <%= pokemon.attaque_spe * 100 / 255 %>%;"></span>
+        </div>
+      </li>
+      <li class="stat-detail">
+        <span class="stat-detail-name">Défense Spé.</span>
+        <span class="stat-detail-value"><%= pokemon.defense_spe %></span>
+        <div class="stat-bar">
+          <div class="stat-bar-value" style="width: <%= pokemon.defense_spe * 100 / 255 %>%;"></span>
+        </div>
+      </li>
+      <li class="stat-detail">
+        <span class="stat-detail-name">Vitesse</span>
+        <span class="stat-detail-value"><%= pokemon.vitesse %></span>
+        <div class="stat-bar">
+          <div class="stat-bar-value" style="width: <%= pokemon.vitesse * 100 / 255 %>%;"></span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="home-link-container">
+  <a class="home-link" href="/">Revenir à la liste</a>
+</div>
+<%- include('partials/footer') %>
