@@ -7,18 +7,17 @@ const mainController = {
     if (!pokedex) {
       res.status(404).render('404');
     }
-    console.log(pokedex);
     res.render('home', { pokedex });
   },
   // méthode pour la page de détail d'un pokemon
   pokemonPage: async (req, res) => {
     const { id } = req.params;
     const pokemon = await dataMapper.getPokemonById(id);
-    const types = await dataMapper.getPokemonTypesByNumero(pokemon.numero);
     if (!pokemon) {
-      res.status(404).render('404');
+      return res.status(404).render('404');
     }
-    res.render('pokemonDetail', { pokemon, types });
+    const types = await dataMapper.getPokemonTypesByNumero(pokemon.numero);
+    return res.render('pokemonDetail', { pokemon, types });
   },
   // méthode pour la page de recherche par type
   typesPage: async (req, res) => {

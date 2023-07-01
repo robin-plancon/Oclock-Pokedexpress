@@ -7,6 +7,7 @@ const dataMapper = {
   },
 
   async getPokemonById(id) {
+    console.log(id);
     const result = await client.query('SELECT * FROM pokemon WHERE id = $1', [id]);
     return result.rows[0];
   },
@@ -24,7 +25,7 @@ const dataMapper = {
   },
   async getPokemonByTypeId(typeId) {
     const result = await client.query(
-      'SELECT * FROM pokemon INNER JOIN pokemon_type ON pokemon.numero = pokemon_type.pokemon_numero WHERE pokemon_type.type_id = $1',
+      'SELECT *, pokemon.id FROM "pokemon" INNER JOIN pokemon_type ON pokemon.numero = pokemon_type.pokemon_numero WHERE pokemon_type.type_id = $1',
       [typeId]
     );
     return result.rows;
