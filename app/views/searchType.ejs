@@ -1,0 +1,10 @@
+<%- include('partials/header') %>
+<h1 class="page-title">Cliquez sur un type pour voir tous les Pokémon de ce type</h1>
+<div class="container-type-list">
+  <% types.forEach(function(type) { %>
+    <a class="type-link" style="background-color: #<%= type.color %>;" href="/type/<%= type.id %>">
+      <span class="type-name"><%= type.name %></span>
+    </a>
+  <% }); %>
+</div>
+<%- include('partials/footer') %>

@@ -121,6 +121,21 @@ body {
   margin-bottom: 1rem;
 }
 
+.pokemon-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+}
+
+.pokemon-type {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-shadow: 0 1px 1px #222222;
+  color: var(--white);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
 .stat-title {
   font-size: 2rem;
   font-weight: 700;
@@ -176,3 +191,43 @@ body {
   font-size: 1.6rem;
   font-weight: 700;
 }
+
+/* search by type page */
+
+.container-type-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 98%;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.type-link {
+  text-decoration: none;
+  width: 24%;
+  padding: 1rem 0;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+.type-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+@media only screen and (max-width: 992px) {
+  .type-link {
+    width: 48%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .type-link {
+    width: 98%;
+    margin: 0 auto;
+  }
+}
+
