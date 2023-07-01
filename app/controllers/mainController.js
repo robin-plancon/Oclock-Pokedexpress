@@ -28,6 +28,15 @@ const mainController = {
     }
     res.render('searchType', { types });
   },
+  // méthode pour la page de recherche par type
+  pokemonByTypePage: async (req, res) => {
+    const { id } = req.params;
+    const pokemonList = await dataMapper.getPokemonByTypeId(id);
+    if (!pokemonList) {
+      res.status(404).render('404');
+    }
+    res.render('pokemonByType', { pokemonList });
+  },
 };
 
 module.exports = mainController;
